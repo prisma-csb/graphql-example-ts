@@ -1,13 +1,20 @@
-endpoint: __YOUR_PRISMA_ENDOINT__ # This project uses a hosted Demo server with disabled mutations
+# Specifies the HTTP endpoint of your Prisma API.
+ # This project uses a Demo server with disabled mutations, that's why this is empty.
+endpoint: ''
+
+# Defines your models, each model is mapped to the database as a table.
 datamodel: datamodel.prisma
 
+# Specifies the language and directory for the generated Prisma client.
 generate:
   - generator: typescript-client
     output: ../src/generated/prisma-client/
 
+# Ensures Prisma client is re-generated after a datamodel change.
 hooks:
   post-deploy:
     - prisma generate
 
+# Seeds initial data into the database by running a script.
 seed:
-  run: yarn ts-node prisma/seed.ts
+  import: seed.graphql

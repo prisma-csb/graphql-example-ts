@@ -52,7 +52,7 @@ type Post {
   updatedAt: DateTime!
   published: Boolean!
   title: String!
-  content: String!
+  content: String
   author: User!
 }
 
@@ -65,7 +65,7 @@ type PostConnection {
 input PostCreateInput {
   published: Boolean
   title: String!
-  content: String!
+  content: String
   author: UserCreateOneWithoutPostsInput!
 }
 
@@ -77,7 +77,7 @@ input PostCreateManyWithoutAuthorInput {
 input PostCreateWithoutAuthorInput {
   published: Boolean
   title: String!
-  content: String!
+  content: String
 }
 
 type PostEdge {
@@ -106,7 +106,7 @@ type PostPreviousValues {
   updatedAt: DateTime!
   published: Boolean!
   title: String!
-  content: String!
+  content: String
 }
 
 input PostScalarWhereInput {
@@ -333,10 +333,8 @@ type Subscription {
 
 type User {
   id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  name: String!
   email: String!
+  name: String
   posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
 }
 
@@ -347,8 +345,8 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  name: String!
   email: String!
+  name: String
   posts: PostCreateManyWithoutAuthorInput
 }
 
@@ -358,8 +356,8 @@ input UserCreateOneWithoutPostsInput {
 }
 
 input UserCreateWithoutPostsInput {
-  name: String!
   email: String!
+  name: String
 }
 
 type UserEdge {
@@ -370,22 +368,20 @@ type UserEdge {
 enum UserOrderByInput {
   id_ASC
   id_DESC
+  email_ASC
+  email_DESC
+  name_ASC
+  name_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
   updatedAt_DESC
-  name_ASC
-  name_DESC
-  email_ASC
-  email_DESC
 }
 
 type UserPreviousValues {
   id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  name: String!
   email: String!
+  name: String
 }
 
 type UserSubscriptionPayload {
@@ -407,14 +403,14 @@ input UserSubscriptionWhereInput {
 }
 
 input UserUpdateInput {
-  name: String
   email: String
+  name: String
   posts: PostUpdateManyWithoutAuthorInput
 }
 
 input UserUpdateManyMutationInput {
-  name: String
   email: String
+  name: String
 }
 
 input UserUpdateOneRequiredWithoutPostsInput {
@@ -425,8 +421,8 @@ input UserUpdateOneRequiredWithoutPostsInput {
 }
 
 input UserUpdateWithoutPostsDataInput {
-  name: String
   email: String
+  name: String
 }
 
 input UserUpsertWithoutPostsInput {
@@ -449,36 +445,6 @@ input UserWhereInput {
   id_not_starts_with: ID
   id_ends_with: ID
   id_not_ends_with: ID
-  createdAt: DateTime
-  createdAt_not: DateTime
-  createdAt_in: [DateTime!]
-  createdAt_not_in: [DateTime!]
-  createdAt_lt: DateTime
-  createdAt_lte: DateTime
-  createdAt_gt: DateTime
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-  updatedAt_not: DateTime
-  updatedAt_in: [DateTime!]
-  updatedAt_not_in: [DateTime!]
-  updatedAt_lt: DateTime
-  updatedAt_lte: DateTime
-  updatedAt_gt: DateTime
-  updatedAt_gte: DateTime
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
   email: String
   email_not: String
   email_in: [String!]
@@ -493,6 +459,20 @@ input UserWhereInput {
   email_not_starts_with: String
   email_ends_with: String
   email_not_ends_with: String
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
   posts_every: PostWhereInput
   posts_some: PostWhereInput
   posts_none: PostWhereInput
