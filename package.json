@@ -1,0 +1,22 @@
+{
+  "name": "prisma-based-graphql-server-example-ts",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "generate": "graphqlgen"
+  },
+  "dependencies": {
+    "graphql": "^14.0.2",
+    "graphql-yoga": "^1.16.7",
+    "prisma-client-lib": "^1.23.4"
+  },
+  "devDependencies": {
+    "graphqlgen": "0.4.0",
+    "ts-node": "7.0.1",
+    "typescript": "3.2.2"
+  },
+  "keywords": [],
+  "description": ""
+}

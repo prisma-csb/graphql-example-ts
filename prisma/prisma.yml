@@ -1,0 +1,13 @@
+endpoint: __YOUR_PRISMA_ENDOINT__ # This project uses a hosted Demo server with disabled mutations
+datamodel: datamodel.prisma
+
+generate:
+  - generator: typescript-client
+    output: ../src/generated/prisma-client/
+
+hooks:
+  post-deploy:
+    - prisma generate
+
+seed:
+  run: yarn ts-node prisma/seed.ts
