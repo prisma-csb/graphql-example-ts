@@ -874,6 +874,6 @@ export const models = [
 export const Prisma = makePrismaClientClass<ClientConstructor<Prisma>>({
   typeDefs,
   models,
-  endpoint: `https://service-hqaedcylmy.now.sh/` // This is a dummy service with disabled mutations
+  endpoint: `https://service-use-cases-pyauzssgla.now.sh/` // This is a dummy service with disabled mutations
 })
 export const prisma = new Prisma()
