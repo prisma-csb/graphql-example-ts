@@ -1,6 +1,7 @@
 import { GraphQLServer } from 'graphql-yoga'
 import { prisma } from './generated/prisma-client'
 import { resolvers } from './resolvers'
+import { defaultPlaygroundQuery } from './defaultPlaygroundQuery'
 
 /**
  * 🚀 Run `yarn start` to start the GraphQL server. 
@@ -9,12 +10,13 @@ import { resolvers } from './resolvers'
  * Follow the instructions here: https://github.com/prisma-csb/graphql-example-ts/blob/master/SETUP.md
  */
 
- const server = new GraphQLServer({
+
+const server = new GraphQLServer({
   typeDefs: './src/schema.graphql',
-  resolvers,
+  resolvers: resolvers,
   context: {
     prisma,
   },
 } as any)
 
-server.start(() => console.log('Server is running on http://localhost:4000'))
+server.start({ defaultPlaygroundQuery }, () => console.log('Server is running on http://localhost:4000'))
