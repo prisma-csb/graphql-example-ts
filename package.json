@@ -6,16 +6,16 @@
     "generate": "graphqlgen"
   },
   "dependencies": {
-    "graphql-yoga": "1.17.0",
-    "prisma-client-lib": "1.24.0"
+    "graphql-yoga": "1.17.4",
+    "prisma-client-lib": "1.30.1"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.17",
-    "@types/graphql": "14.0.4",
+    "@types/aws-lambda": "8.10.24",
+    "@types/graphql": "14.2.0",
     "@types/ws": "6.0.1",
     "graphqlgen": "0.5.0",
-    "prisma": "^1.25.0-beta.16",
-    "ts-node": "7.0.1",
-    "typescript": "3.2.2"
+    "prisma": "^1.31.0",
+    "ts-node": "8.1.0",
+    "typescript": "3.4.3"
   }
 }
